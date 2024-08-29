@@ -1,0 +1,20 @@
+includes:
+    - vendor/larastan/larastan/extension.neon
+
+parameters:
+
+    paths:
+        - app/
+
+    # Level 9 is the highest level
+    level: 5
+
+    ignoreErrors:
+        # Prologue\Alerts defines its methods from its configuration file dynamically
+        - '#^Call to an undefined method Prologue\\Alerts\\AlertsMessageBag::(danger|success|info|warning)\(\)\.$#'
+
+#    excludePaths:
+#        - ./*/*/FileToBeExcluded.php
+#
+#    checkMissingIterableValueType: false
+
